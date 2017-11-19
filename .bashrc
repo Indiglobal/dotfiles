@@ -12,17 +12,26 @@
 
 # Some applications read the EDITOR variable to determine your favourite text
 # editor. So uncomment the line below and enter the editor of your choice :-)
-#export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/vim
 #export EDITOR=/usr/bin/mcedit
 
 # For some news readers it makes sense to specify the NEWSSERVER variable here
 #export NEWSSERVER=your.news.server
 
-# If you want to use a Palm device with Linux, uncomment the two lines below.
-# For some (older) Palm Pilots, you might need to set a lower baud rate
-# e.g. 57600 or 38400; lowest is 9600 (very slow!)
-#
-#export PILOTPORT=/dev/pilot
-#export PILOTRATE=115200
+# MAP COLOURS
+BLUE="$(tput setaf 4)"
+RESET="$(tput sgr 0)"
 
-test -s ~/.alias && . ~/.alias || true
+# LOCAL VARIABLES
+#export $PS1="$BLUE\u@\h: \W > $RESET"
+export PS1="\e[0;34m\u@\h: \w $>\e[m "
+
+## This makes no print anything to non-interactive shells
+[[ $- != *i* ]] && return
+
+#test -s ~/.alias && . ~/.alias || true
+#[ -t 0 ] && return
+#echo ".bashrc loaded"
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux 
+fi
