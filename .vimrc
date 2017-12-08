@@ -4,6 +4,8 @@ set nocompatible
 " 
 syntax enable
 
+" settings
+set hidden
 
 filetype plugin indent on
 
@@ -20,6 +22,9 @@ set wildmenu
 " Turn on line numbers
 set number
 
+" Mappings
+nmap <S-Enter> O<Esc>
+
 " Plugins - managed with junegunn/vim-plug
 " To install vim-plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
@@ -32,7 +37,11 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-" Set color scheme
+" Plugin settings
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
+" Set color 
 colo seoul256
 set background=dark
 
