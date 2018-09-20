@@ -28,6 +28,14 @@ nmap <S-Enter> O<Esc>
 " Plugins - managed with junegunn/vim-plug
 " To install vim-plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " run PlugInstall! or PlugUpdate to install the plugins
+
+" Automatic installation of vimplug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -44,6 +52,6 @@ let g:airline#extensions#tabline#enabled = 1
 let NERDTreeShowHidden=1
 
 " Set color 
-colo seoul256
-set background=dark
+" colo seoul256
+" set background=dark
 
