@@ -24,6 +24,8 @@ set number
 
 " Mappings
 nmap <S-Enter> O<Esc>
+noremap <Tab> :bnext<CR>
+noremap <S-Tab> :bprevious<CR>
 
 " Plugins - managed with junegunn/vim-plug
 " To install vim-plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
