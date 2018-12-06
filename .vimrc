@@ -27,6 +27,11 @@ nmap <S-Enter> O<Esc>
 noremap <Tab> :bnext<CR>
 noremap <S-Tab> :bprevious<CR>
 
+"Functions
+nnoremap <Leader>s :%/\<<C-r><C-w>\>/ 
+" use this to find and replace and instances of a word under the cursor, place
+" cursor on the word and then press :s enter the replacement followed by /g
+
 " Plugins - managed with junegunn/vim-plug
 " To install vim-plug: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " run PlugInstall! or PlugUpdate to install the plugins
@@ -45,6 +50,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
