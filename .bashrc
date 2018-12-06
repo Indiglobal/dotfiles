@@ -32,6 +32,8 @@ export PS1="\e[0;34m\u@\h: \w $>\e[m "
 #test -s ~/.alias && . ~/.alias || true
 #[ -t 0 ] && return
 #echo ".bashrc loaded"
+
+# Attach to existing session or create one if it does not exist
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
     tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux 
 fi
