@@ -4,7 +4,7 @@ set nocompatible
 " 
 syntax enable
 
-" settings
+" Settings
 set hidden
 
 filetype plugin indent on
@@ -13,7 +13,7 @@ filetype plugin indent on
 set expandtab
 set tabstop=4
 set softtabstop=4
-set shiftwidth=4
+set shiftwidth=2
 
 set autoindent
 set wildmode=longest,list,full
@@ -51,6 +51,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'valloric/YouCompleteMe'
 
 call plug#end()
 
