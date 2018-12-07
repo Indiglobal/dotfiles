@@ -6,6 +6,7 @@ syntax enable
 
 " Settings
 set hidden
+set encoding=utf-8 "required for YouCompleteMe
 
 filetype plugin indent on
 
